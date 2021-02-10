@@ -3,7 +3,7 @@ const morgan = require("morgan");
 const app = express();
 const mongoose = require("mongoose");
 
-// Middleware - A function that fires on the inbetween for every route
+// Middleware - A function that fires on the in between for every route
 app.use(express.json()); // Looks for a request body, and turns it into "req.body"
 app.use(morgan("dev")); // Logs request to the console
 
