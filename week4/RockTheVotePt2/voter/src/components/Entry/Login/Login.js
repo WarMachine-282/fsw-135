@@ -1,31 +1,44 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import Icons from "../../Icons/Icons"
 import "./Login.css";
 
 const Login = () => {
   return (
-    <div className="bg-image">
-      <div className="form-body">
-      <form>
-        <div className="segment">
-          <h1>Rock The Vote!</h1>
+    <div>
+      <div className="container">
+        <div className="left">
+          <div className="header">
+            <h2 className="animation a1">Welcome To DigiVote!</h2>
+            <h4 className="animation a2">
+              Log in to your account using username and password
+            </h4>
+          </div>
+          <form action="">
+            <div className="form">
+              <input
+                type="username"
+                className="form-field animation a3"
+                placeholder="Username"
+              />
+              <input
+                type="password"
+                className="form-field animation a4"
+                placeholder="Password"
+              />
+              <Link to="Main">
+                <button id="lgn-btn" className="animation a5">
+                  LOGIN
+                </button>
+              </Link>
+              <Link to="Registration">
+                <button id="sgn-btn" className="animation a5">
+                  SIGN UP
+                </button>
+              </Link>
+            </div>
+          </form>
         </div>
-        <label>
-          <input type="text" placeholder="Username" />
-        </label>
-        <label>
-          <input type="password" placeholder="Password" />
-        </label>
-        <button className="login" type="button">
-        <div className="login-center"><Icons Icon={LockOutlinedIcon}/>Log in</div>
-        </button>
-        <br/>
-        <button className="signup" type="button">
-        <Link to="/Registration" className="signup" type="button"style={{color: "inherit", textDecoration: "none" }}>Sign up</Link>
-        </button>
-      </form>
+        <div className="right"></div>
       </div>
     </div>
   );
