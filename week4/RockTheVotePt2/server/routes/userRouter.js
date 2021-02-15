@@ -61,7 +61,7 @@ userRouter.delete("/:userId", (req, res, next) => {
     }
     return res
       .status(200)
-      .send(`Successfully deleted item ${deletedUser.username} from the database`);
+      .send(`Successfully deleted item ${deletedUser.user} from the database`);
   });
 });
 

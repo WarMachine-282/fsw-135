@@ -2,7 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
 
-const Login = () => {
+
+const Login = (props) => {
+
+
   return (
     <div>
       <div className="container">
@@ -13,28 +16,30 @@ const Login = () => {
               Log in to your account using username and password
             </h4>
           </div>
-          <form action="">
+          <form onSubmit={props.handleSubmit}>
             <div className="form">
               <input
-                type="username"
                 className="form-field animation a3"
+                type="text"
+                value={props.username}
+                name="username"
+                onChange={props.handleChange}
                 placeholder="Username"
               />
               <input
-                type="password"
                 className="form-field animation a4"
+                type="text"
+                value={props.password}
+                name="password"
+                onChange={props.handleChange}
                 placeholder="Password"
               />
-              <Link to="Main">
-                <button id="lgn-btn" className="animation a5">
+                <button type= "submit" id="lgn-btn" className="animation a5">
                   LOGIN
                 </button>
-              </Link>
-              <Link to="Registration">
-                <button id="sgn-btn" className="animation a5">
+                <button onClick={() => props.setToggle(true)} id="sgn-btn" className="animation a5">
                   SIGN UP
                 </button>
-              </Link>
             </div>
           </form>
         </div>

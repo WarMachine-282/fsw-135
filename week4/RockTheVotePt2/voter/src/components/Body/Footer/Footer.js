@@ -1,12 +1,12 @@
-import React from "react"
-import "./Footer.css"
+import React from "react";
+import "./Footer.css";
 
 const Footer = () => {
-    return (
-        <div>
+  return ( 
+  <footer role="contentinfo">
+      &copy;2020 Christian Van Loon
+  </footer>
+  )
+};
 
-        </div>
-    )
-}
-
-export default Footer
+export default Footer;

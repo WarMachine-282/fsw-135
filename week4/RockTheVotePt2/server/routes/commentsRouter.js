@@ -4,6 +4,7 @@ const Comments = require("../models/comments");
 
 //POST ONE
 commentsRouter.post("/", (req, res, next) => {
+  req.body.user = req.user._id
   const newComments = new Comments(req.body);
   newComments.save((err, savedComments) => {
     if (err) {
