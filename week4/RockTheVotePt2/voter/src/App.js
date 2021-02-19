@@ -12,9 +12,8 @@ const App = () => {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/" render={() => <Auth/>} />
-          <Route path="/Registration" render={() => <Registration/>} />
-          <Route path="/Main" render={() => <Main/>} />
+          <Route exact path="/" render={() => <Auth/>}/>
+          <Route path="/Main" render={() => <Main/>}/>
         </Switch>
       </Router>
     </div>

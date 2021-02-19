@@ -1,0 +1,41 @@
+.color_bg {
+  background: linear-gradient(to right, #ff0000 0%, #0097ff 100%);
+  background-color: black;
+  transition: 1s;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.protanomaly {
+  background: #9dcea5;
+}
+
+.protanopia {
+  background: #d1c4a0;
+}
+
+.deuteranomaly {
+  background: #a5c9b3;
+}
+
+.deuteranopia {
+  background: #debeb6;
+}
+
+.tritanomaly {
+  background: #56d8d1;
+}
+
+.tritanopia {
+  background: #62d5e6;
+}
+
+.achromatomaly {
+  background: #8ec7b5;
+}
+
+.achromatopsia {
+  background: #b9b9b9;
+}

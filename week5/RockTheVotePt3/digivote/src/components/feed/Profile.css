@@ -1,0 +1,43 @@
+.prof-panel {
+  background-color: white;
+  color: darkslategray;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  border-radius: 0.3rem;
+  margin: 3%;
+  padding: 3%;
+}
+.prof-panel > h2 {
+  margin: 1rem;
+}
+.prof-content {
+    height: 60vh;
+}
+@media screen and (min-width: 600px) {
+  .prof-panel {
+    margin: 2% 0 0 2%;
+    float: left;
+    width: 96%;
+  }
+  .prof-panel:after {
+    content: "";
+    display: table;
+    clear: inline-end;
+  }
+
+  main[role="main"] {
+    margin: 75px;
+  }
+  main[role="main"]:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+@media screen and (min-width: 900px) {
+    .prof-panel {
+        width: 96%;
+        clear: none;
+      }
+}

@@ -1,3 +1,24 @@
+@media only screen and (max-width: 360px) {
+  table {
+    border-collapse: collapse;
+    width: 6%;
+    /* margin: 5%; */
+  }
+  th {
+    font-weight: 900;
+    font-size: 10px;
+    padding: 0 4px;
+  }
+  td {
+    font-size: 10px;
+    line-height: 20px;
+    font-weight: 300;
+    padding: 0 4px;
+  }
+  
+}
+
+
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap");
@@ -10,7 +31,6 @@ html {
 *:after {
   box-sizing: inherit;
 }
-
 .color_bg {
   background: linear-gradient(to right, #ff0000 0%, #0097ff 100%);
   background-color: black;
@@ -20,7 +40,6 @@ html {
   background-repeat: no-repeat;
   background-position: center;
 }
-
 /* panels */
 .panel {
   background-color: white;
@@ -90,15 +109,16 @@ main li:before {
 
 /* forms */
 form input,
-form textarea,
+form #textarea,
 form select {
   width: 100%;
   display: block;
   border: solid 1px #dde;
+  line-height: 1.2em;
   padding: 0.5em;
 }
 form input:after,
-form textarea:after,
+form #textarea:after,
 form select:after {
   content: "";
   display: table;
@@ -114,11 +134,11 @@ form legend {
   display: block;
   margin: 1em 0 0.5em;
 }
-form input[type="submit"] {
+.subbtn {
   display: inline-block;
   padding: 12px 10px;
   border: 0;
-  background:#0097ff;
+  background: #0097ff;
   border-radius: 3px;
   margin: 10px;
   color: #fff;
@@ -131,11 +151,11 @@ form input[type="submit"] {
   border-radius: 0.5em;
 }
 
-form input[type="submit"]:hover {
+.subbtn:hover {
   display: inline-block;
   padding: 12px 10px;
   border: 0;
-  background:#ff0000;
+  background: #ff0000;
   transition: 1s;
   border-radius: 3px;
   margin-top: 10px;
@@ -148,7 +168,6 @@ form input[type="submit"]:hover {
   -ms-border-radius: 0.5em;
   border-radius: 0.5em;
 }
-
 /* tables */
 table {
   border-collapse: collapse;
@@ -176,14 +195,15 @@ td {
   padding: 0 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-
-
 @media screen and (min-width: 600px) {
   html,
   body {
     height: 100%;
   }
-
+  
+  .subbtn {
+    width: 8.5em;
+  }
   main[role="main"] {
     margin: 75px;
   }
@@ -192,7 +212,7 @@ td {
     display: table;
     clear: both;
   }
-
+  
   .panel {
     margin: 2% 0 0 2%;
     float: left;
@@ -203,32 +223,30 @@ td {
     display: table;
     clear: inline-end;
   }
-
+  
   .box,
   .twothirds,
   .onethird {
     padding: 1rem;
   }
-
+  
   .onethird {
-    width: 33.333%;  
+    width: 33.333%;
     float: left;
   }
-
+  
   .twothirds {
     width: 66%;
     float: left;
   }
-
 }
 @media screen and (min-width: 900px) {
-
   .panel {
     width: 47%;
     clear: none;
   }
-  .panel-table{
-        width: 47%;
+  .panel-table {
+    width: 47%;
     clear: none;
   }
   .panel.important {
@@ -238,3 +256,4 @@ td {
     width: 23%;
   }
 }
+
