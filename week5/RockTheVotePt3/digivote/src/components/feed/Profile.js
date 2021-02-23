@@ -1,35 +1,30 @@
 import React, { useContext } from "react";
 import Header from "../body/header/Header";
+import { UserContext } from "../../context/UserProvider.js";
 import Footer from "../body/footer/Footer";
-import "./Profile.css";
 import IssueForm from "./IssueForm";
 import IssueList from "./IssueList";
 import Issue from "./Issue";
-import { UserContext } from "../../context/UserProvider";
-
-
+import "./Profile.css";
 
 export default function Profile() {
-  const {
-    user: { username },
-    addIssue,
-    issues,
-  } = useContext(UserContext);
-  
   return (
-    <div className="color_bg">
-      <Header />
-      <main role="main">
-        <section className="prof-panel">
-          <h1>Welcome @{username}!</h1>
-          <h3>Add a topic</h3>
-          <IssueForm addIssue={addIssue} />
-          <h3>Your topics</h3>
-          <IssueList Issues={issues} />
-        </section>
-      </main>
-      <Footer />
-    </div>
+    <UserContext.Consumer>
+      {(context) => (
+        <div className="color_bg">
+          <Header />
+          <main role="main">
+            <section className="prof-panel">
+              <h2>Welcome {context.user.username}!</h2>
+              <IssueForm addIssue={context.addIssue} />
+              <h3>Your topics</h3>
+              <IssueList issues={context.issues} />
+            </section>
+          </main>
+          <Footer />
+        </div>
+      )}
+    </UserContext.Consumer>
   );
 }
 

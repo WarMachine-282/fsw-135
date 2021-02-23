@@ -134,6 +134,8 @@ form legend {
   display: block;
   margin: 1em 0 0.5em;
 }
+
+/* FORM BUTTON  */
 .subbtn {
   display: inline-block;
   padding: 12px 10px;
@@ -168,7 +170,10 @@ form legend {
   -ms-border-radius: 0.5em;
   border-radius: 0.5em;
 }
-/* tables */
+/* RADIO ICONS */
+
+
+/* TABLES */
 table {
   border-collapse: collapse;
   width: 96%;

@@ -16,16 +16,20 @@ export default function IssueForm(props) {
       ...prevInputs,
       [name]: value,
     }));
+    console.log(handleChange)
   }
-
+  
   function handleSubmit(e) {
     e.preventDefault();
+    console.log(inputs)
     addIssue(inputs);
     setInputs(initInputs);
+    console.log(handleSubmit)
   }
 
-  const { votes, subject, description } = inputs;
+  const { subject, description, votes } = inputs;
   return (
+    
     <section className="panel important">
       <h2>Post an issue</h2>
       <form onSubmit={handleSubmit}>

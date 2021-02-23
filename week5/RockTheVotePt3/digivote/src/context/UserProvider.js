@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
+
 export const UserContext = React.createContext();
 
 const userAxios = axios.create();
+
 userAxios.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
   config.headers.Authorization = `Bearer ${token}`;
@@ -47,7 +49,7 @@ export default function UserProvider(props) {
           user,
           token,
         }));
-        console.log(login)
+        console.log(login);
       })
       .catch((err) => console.log(err.response.data.errMsg));
   };
@@ -65,7 +67,7 @@ export default function UserProvider(props) {
 
   const getUserIssue = () => {
     userAxios
-      .get("/api/issue/user")
+      .get("/api/issue/")
       .then((res) => {
         setUserState((prevState) => ({
           ...prevState,
@@ -85,10 +87,20 @@ export default function UserProvider(props) {
         }));
       })
       .catch((err) => console.log(err.response.data.errMsg));
-  }
+  };
+//   const deleteIssue = async (id) => {
+//     try {
+//         await axios.delete(`api/issue`, { params: { id } })
+//         return id
+//     } catch (err) {
+//         console.log(err)
+//     }
+// }
 
   return (
-    <UserContext.Provider value={{ ...userState, signup, login, logout, addIssue }}>
+    <UserContext.Provider
+      value={{ ...userState, signup, login, logout, addIssue }}
+    >
       {props.children}
     </UserContext.Provider>
   );

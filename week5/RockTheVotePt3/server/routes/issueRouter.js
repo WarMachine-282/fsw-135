@@ -4,7 +4,7 @@ const Issue = require("../models/issue");
 
 //POST ONE
 issueRouter.post("/", (req, res, next) => {
-  req.body.username = req.username._id
+  req.body.user = req.user._id
   const newIssue = new Issue(req.body);
   newIssue.save((err, savedIssue) => {
     if (err) {
