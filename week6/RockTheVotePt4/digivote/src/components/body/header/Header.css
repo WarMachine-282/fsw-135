@@ -1,0 +1,73 @@
+
+header[role="banner"] {
+    background: white;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  }
+  header[role="banner"] h1 {
+    font-family: "Rubik", sans-serif;
+    color: #4f46a5;
+    margin: 0;
+    font-weight: 700;
+    padding: 1rem;
+  }
+  .utilities {
+    padding: 1em;
+  }
+  .access-profile {
+    width: 100%;
+    size: 2px;
+    padding-right: 1px;
+    color: #4f46a5;
+    cursor:pointer;
+  }
+  .prof-lettering {
+    padding-left: 0.5em;
+    cursor:pointer;
+  }
+  .access-settings {
+    width: 100%;
+    size: 2px;
+    padding-right: 1px;
+    color: #4f46a5;
+    cursor:pointer;
+  }
+  .set-lettering {
+    padding-left: 0.5em;
+    cursor:pointer;
+  }
+  .access-logout {
+    width: 100%;
+    size: 2px;
+    padding-right: 1px;
+    color: #4f46a5;
+    cursor:pointer;
+  }
+  .logout-lettering {
+    padding-left: 0.5em;
+    cursor:pointer;
+  }
+
+  @media screen and (min-width: 600px) {
+    header[role="banner"] {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99;
+        height: 75px;
+      }
+      header[role="banner"] .utilities {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: transparent;
+        color: darkslategray;
+        width: auto;
+      }
+      header[role="banner"] .utilities li {
+        display: inline-block;
+      }
+      header[role="banner"] .utilities li {
+        padding: 0.5em 1em;
+      }
+  }
