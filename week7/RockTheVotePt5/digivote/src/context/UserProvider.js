@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 export const UserContext = React.createContext();
@@ -21,17 +21,17 @@ export default function UserProvider(props) {
   const [userState, setUserState] = useState(initState);
 
   function handleAuthErr(errMsg) {
-    setUserState((prevState) => ({
+    setUserState(prevState => ({
       ...prevState,
-      errMsg,
-    }));
+      errMsg
+    }))
   }
 
   function resetAuthErr() {
-    setUserState((prevState) => ({
+    setUserState(prevState => ({
       ...prevState,
-      errMsg: "",
-    }));
+      errMsg: ""
+    }))
   }
 
   const signup = (credentials) => {
@@ -75,13 +75,14 @@ export default function UserProvider(props) {
       user: {},
       token: "",
       issues: [],
+      // comments: []
     });
     console.log(logout);
   };
 
   const getUserIssue = () => {
     userAxios
-      .get("/api/issue/user")
+      .get("/api/issue/")
       .then((res) => {
         setUserState((prevState) => ({
           ...prevState,
@@ -91,13 +92,9 @@ export default function UserProvider(props) {
       .catch((err) => console.log(err.response.data.errMsg));
   };
 
-  useEffect(() => {
-    getUserIssue();
-  }, []);
-
   const addIssue = (newIssue) => {
     userAxios
-      .post("/api/issue/user", newIssue)
+      .post("/api/issue", newIssue)
       .then((res) => {
         setUserState((prevState) => ({
           ...prevState,
@@ -107,32 +104,22 @@ export default function UserProvider(props) {
       .catch((err) => console.log(err.response.data.errMsg));
   };
   const deleteIssue = (id) => {
-    console.log(id);
-    userAxios
-      .delete(`/api/issue/${id}`)
-      .then((res) => {
-        setUserState((prevState) => ({
-          ...prevState,
-          issues: prevState.issues.filter((issue) => issue._id !== id),
-        }));
-      })
-      .catch((err) => {
-        console.log(err, "blue");
-      });
-  };
+    console.log(id)
+         userAxios.delete(`/api/issue/${id}`)
+         .then(res => {
+          setUserState((prevState) => ({
+            ...prevState,
+            issues: prevState.issues.filter(issue => issue._id !== id) 
+          }));
+         })
+         .catch (err => {
+             console.log(err, "blue")
+         })
+}
 
   return (
     <UserContext.Provider
-      value={{
-        ...userState,
-        signup,
-        login,
-        logout,
-        getUserIssue,
-        deleteIssue,
-        addIssue,
-        resetAuthErr,
-      }}
+      value={{ ...userState, signup, login, logout, deleteIssue, addIssue, resetAuthErr }}
     >
       {props.children}
     </UserContext.Provider>
